@@ -829,7 +829,7 @@ msgstr "类型：行为输出 (个性化内容）"
 
 #: action/templates/action/export_ask.html:14
 msgid "Content"
-msgstr "类容"
+msgstr "内容"
 
 #: action/templates/action/export_ask.html:19
 msgid "Type: Action in (data request)"
