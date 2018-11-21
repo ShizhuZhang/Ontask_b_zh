@@ -17,20 +17,17 @@
 {% block scripts %}
   <script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
   <script src="{% static 'site/js/query-builder.standalone.min.js' %}" ></script>
+  {% with country=LANGUAGE_CODE|country %}
+    <script src="{% static 'site/js/query-builder.'|add:country|add:'.js' %}"></script>
+  {% endwith %}
   <script src="{% static 'site/js/sol.js' %}"></script>
   <script src="{% static 'action/js/action.js' %}?v={% ontask_version %}"></script>
   {% ontask_datatables_jquery_js %}
   {% ontask_datatables_bootstrap_js %}
   <script type="text/javascript">
-    var qbuilder_options = {
-      plugins: ['bt-tooltip-errors', 'not-group'],
-      operators: ['equal', 'not_equal', 'less', 'less_or_equal',
-                  'greater', 'greater_or_equal', 'between', 'not_between',
-                  'begins_with', 'not_begins_with', 'contains', 'not_contains',
-                  'ends_with', 'not_ends_with', 'is_empty', 'is_not_empty'],
-      allow_empty: true,
-      filters: {{ query_builder_ops|safe }},
-    };
+    {% with allow_empty='true' %}
+      {% include 'qbuilder_options.js' %}
+    {% endwith %}
     if (document.getElementById("column-selected-table") != null) {
         $(document).ready(function() {
             $('#column-selected-table').DataTable({
@@ -183,7 +180,7 @@
               class="btn btn-primary spin"
               data-toggle="tooltip"
               data-placement="auto"
-              title="{% trans 'Save and remain editing' %}">
+              title="{% trans 'Save action and go back to action table' %}">
         <span class="glyphicon glyphicon-ok"></span> {% trans 'Done' %}
       </a>
       <a href="{% url 'action:run_action_in' action.id %}"
@@ -193,12 +190,7 @@
         <span class="glyphicon glyphicon-off"></span> {% trans 'Run' %}
       </a>
     </div>
-    <div class="modal fade" id="modal-item" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog">
-        <div class="modal-content">
-        </div>
-      </div>
-    </div>
   </div>
+  {% include 'modal.html' %}
 {% endblock container %}
 
