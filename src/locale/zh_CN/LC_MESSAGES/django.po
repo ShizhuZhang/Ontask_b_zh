@@ -46,7 +46,7 @@ msgid ""
 "user account at %(site_name)s."
 msgstr ""
 "您收到本邮件是因为你要求重置您的\n"
-"用户账户 %(site_name)s 的密码。"
+"用户账户%(site_name)s的密码。"
 
 #: accounts/templates/accounts/emails/password-reset-email.html:4
 msgid "Please go to the following page and choose a new password:"
@@ -63,7 +63,7 @@ msgstr "感谢您使用我们的网站！"
 #: accounts/templates/accounts/emails/password-reset-email.html:12
 #, python-format
 msgid "The %(site_name)s team"
-msgstr "%(site_name)s 团队"
+msgstr "%(site_name)s团队"
 
 #: accounts/templates/accounts/login.html:5
 msgid "Log In"
@@ -798,7 +798,7 @@ msgstr "看到每个学习者所看到的内容"
 
 #: action/templates/action/edit_in.html:183
 msgid "Save action and go back to action table"
-msgstr ""
+msgstr "保存操作并返回到操作表"
 
 #: action/templates/action/edit_in.html:184
 msgid "Done"
@@ -1760,6 +1760,7 @@ msgid ""
 "Merge operation produced a result without any key columns. Review the key "
 "columns in the data to upload."
 msgstr ""
+"合并操作产生了一个没有键列的结果。请检查待上传数据的键列。"
 
 #: dataops/ops.py:465 dataops/ops.py:476
 #, python-brace-format
@@ -1839,7 +1840,7 @@ msgstr "存在名为\"name\"的字符串字段"
 
 #: dataops/plugin_manager.py:183
 msgid "Presence of a string field with name \"description_txt\""
-msgstr "一个名为 \"description_txt\"字符串字段存在"
+msgstr "一个名为\"description_txt\"字符串字段存在"
 
 #: dataops/plugin_manager.py:184
 msgid ""
