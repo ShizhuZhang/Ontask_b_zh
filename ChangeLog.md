@@ -1,3 +1,42 @@
+## 3.2.1 (2018-11-20)
+
+### Added
+
+- Survey columns now can be queried about their null and not null status.
+    
+### Changed
+
+- Significant changes in the documentation (more to come) to provide more activities and details in the tutorial
+
+- Various minor cosmetic changes in the HTML structure of the pages
+
+- Updated the version of QueryBuilder and added localization files
+
+### Fixed
+
+- Randomly populated columns now are guaranteed to have equal numer of elements in each partition (Issue #104)
+
+- Bug when using the Check all box in CSV upload. It was selecting all checkboxes in the page, now only those related to column upload
+
+- Bug allowing a workflow to loose its key column through outer merge operation. 
+
+
+## 3.2.0 (2018-11-12)
+
+### Added
+
+- Personalized actions can now be downloaded in a ZIP with one file per message. Suitable to be used in combination with *Upload multiple feedback files in a ZIP* in [Moodle Assignments](https://docs.moodle.org/35/en/Assignment_settings#Feedback_types) (Issue #96)
+
+### Fixed
+
+- Error when merging data frames with key columns with different name (Issue #103)
+
+- Error preventing the renaming of actions (Issue #101)
+
+### Changed
+
+- Reviewed the Chinese localization
+
 ## 3.1.0 (2018-10-31)
 
 ### Added
